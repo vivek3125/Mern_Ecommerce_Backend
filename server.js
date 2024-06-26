@@ -36,7 +36,10 @@ app.use('/api/address',addressRouter)
 // payment Router
 app.use('/api/payment',paymentRouter)
 
-mongoose.connect("mongodb://localhost:27017/Ecommerce",{dbName:"Ecommerce"}).then(()=>{
+// const url="mongodb://localhost:27017/Ecommerce"
+const url="mongodb+srv://viveksingh725086:NwSrMn7BdVH6ic7A@cluster0.pp9ilkz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+mongoose.connect(url,{dbName:"Ecommerce"}).then(()=>{
      console.log("Mongodb sussfully connented...")
 }).catch((error)=>{console.log(error)});
 const port=1000
